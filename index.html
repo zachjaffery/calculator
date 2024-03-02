@@ -19,7 +19,8 @@
 
     <script>
       function drinkCalc() {
-        const drinks_per = document.getElementById("drink_per");
+        const output = document.getElementById("output");
+        const drinks_per = document.getElementById("drinks_per");
         const people = document.getElementById("people");
 
     
@@ -28,7 +29,7 @@
         var total_fifths = Math.ceil(total_mls/750);
         var total_handles = Math.ceil(total_mls/1750);
 
-        document.getElementById("output").innerHTML = ("You will require" + total_fifths + "fifths of 40% liquor or" + total_handles + "handles of 40% liquor.");
+        output.innerHTML = ("You will require" + total_fifths + "fifths of 40% liquor or" + total_handles + "handles of 40% liquor.");
       }
     </script>
   </body>
