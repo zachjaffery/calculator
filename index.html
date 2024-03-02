@@ -12,7 +12,7 @@
     <input type="number" id="people" placeholder="Number of people" />
     <input type="number" id="drinks_per" placeholder="Drinks per person" />
     
-    <button onclick="evaluatePython()">Run</button>
+    <button onclick="evaluatePython(people,drinks_per)">Run</button>
     <br />
     <br />
     <div>Output:</div>
@@ -34,12 +34,12 @@
 
       await pyodide.runPythonAsync(`
         from pyodide.http import pyfetch
-        response = await pyfetch("https://.../script.py")
+        response = await pyfetch("https://github.com/zachjaffery/calculator/blob/06e157c7cb64151598ac12f764d25784c6f06991/calc_script.py")
         with open("script.py", "wb") as f:
           f.write(await response.bytes())
       `)
       pkg = pyodide.pyimport("script");
-      pkg.do_something();
+      pkg.calc_script(people,drinks_per);
 
       async function evaluatePython() {
         let pyodide = await pyodideReadyPromise;
