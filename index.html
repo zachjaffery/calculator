@@ -1,8 +1,5 @@
 <!doctype html>
 <html>
-  <head>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
-  </head>
 
   <body>
     <p>
@@ -12,7 +9,7 @@
     <input type="number" id="people" placeholder="Number of people" />
     <input type="number" id="drinks_per" placeholder="Drinks per person" />
     
-    <button onclick="evaluatePython(people,drinks_per)">Run</button>
+    <button onclick="drinkCalc()">Run</button>
     <br />
     <br />
     <div>Output:</div>
@@ -21,16 +18,18 @@
     </p>
 
     <script>
-      const drinks_per = document.getElementById("drink_per");
-      const people = document.getElementById("people");
+      function drinkCalc() {
+        const drinks_per = document.getElementById("drink_per");
+        const people = document.getElementById("people");
 
     
-      var total_drinks = people * drinks_per;
-      var total_mls = total_drinks * 45;
-      var total_fifths = Math.ceil(total_mls/750);
-      var total_handles = Math.ceil(total_mls/1750);
+        var total_drinks = people * drinks_per;
+        var total_mls = total_drinks * 45;
+        var total_fifths = Math.ceil(total_mls/750);
+        var total_handles = Math.ceil(total_mls/1750);
 
-      document.getElementById("output").innerHTML = "You will require" + total_fifths "fifths of 40% liquor or" + total_handles + "handles of 40% liquor."
+        document.getElementById("output").innerHTML = "You will require" + total_fifths "fifths of 40% liquor or" + total_handles + "handles of 40% liquor."
+      }
     </script>
   </body>
 </html>
