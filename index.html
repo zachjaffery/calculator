@@ -6,10 +6,12 @@
 
   <body>
     <p>
-      You can execute any Python code. Just enter something in the box below and
-      click the button.
+      Please input the number of people attending and the desired drinks per person. Then, click the button to calculate.
     </p>
-    <input id="code" value="sum([1, 2, 3, 4, 5])" />
+    
+    <input type="number" id="people" placeholder="Number of people" />
+    <input type="number" id="drinks_per" placeholder="Drinks per person" />
+    
     <button onclick="evaluatePython()">Run</button>
     <br />
     <br />
