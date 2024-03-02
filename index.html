@@ -16,38 +16,21 @@
     <br />
     <br />
     <div>Output:</div>
-    <textarea id="output" style="width: 100%;" rows="6" disabled></textarea>
+    <p id="output">
+      placeholder
+    </p>
 
     <script>
-      const output = document.getElementById("output");
-      const code = document.getElementById("code");
+      const drinks_per = document.getElementById("drink_per");
+      const people = document.getElementById("people");
 
+    
+      var total_drinks = people * drinks_per;
+      var total_mls = total_drinks * 45;
+      var total_fifths = Math.ceil(total_mls/750);
+      var total_handles = Math.ceil(total_mls/1750);
 
-      output.value = "Initializing...\n";
-      // init Pyodide
-      async function main() {
-        let pyodide = await loadPyodide();
-        output.value += "Ready!\n";
-        return pyodide;
-      }
-      let pyodideReadyPromise = main();
-
-      await pyodide.runPythonAsync(`
-        from pyodide.http import pyfetch
-        response = await pyfetch("https://github.com/zachjaffery/calculator/blob/06e157c7cb64151598ac12f764d25784c6f06991/calc_script.py")
-        with open("script.py", "wb") as f:
-          f.write(await response.bytes())
-      `)
-      pkg = pyodide.pyimport("script");
-      pkg.calc_script(people,drinks_per);
-
-      async function evaluatePython() {
-        let pyodide = await pyodideReadyPromise;
-        try {
-          let output = pyodide.runPython(code.value);
-        } catch (err) {
-        }
-      }
+      document.getElementById("output").innerHTML = "You will require" + total_fifths "fifths of 40% liquor or" + total_handles + "handles of 40% liquor."
     </script>
   </body>
 </html>
