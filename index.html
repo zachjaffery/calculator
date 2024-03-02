@@ -22,9 +22,6 @@
       const output = document.getElementById("output");
       const code = document.getElementById("code");
 
-      function addToOutput(s) {
-        output.value += ">>>" + code.value + "\n" + s + "\n";
-      }
 
       output.value = "Initializing...\n";
       // init Pyodide
@@ -35,13 +32,20 @@
       }
       let pyodideReadyPromise = main();
 
+      await pyodide.runPythonAsync(`
+        from pyodide.http import pyfetch
+        response = await pyfetch("https://.../script.py")
+        with open("script.py", "wb") as f:
+          f.write(await response.bytes())
+      `)
+      pkg = pyodide.pyimport("script");
+      pkg.do_something();
+
       async function evaluatePython() {
         let pyodide = await pyodideReadyPromise;
         try {
           let output = pyodide.runPython(code.value);
-          addToOutput(output);
         } catch (err) {
-          addToOutput(err);
         }
       }
     </script>
