@@ -73,12 +73,12 @@
     <script>
       function drinkCalc() {
         const output = document.getElementById("output");
-        const drinks_per = document.getElementById("drinks_per");
-        const people = document.getElementById("people");
+        const drinks_per = document.getElementById("drinks_per").valueAsNumber;
+        const people = document.getElementById("people").valueAsNumber;
     
-        var d = Integer.parseInt(drinks_per);
-        var p = Integer.parseInt(people);
-        var total_drinks = p * d;
+        //var d = Integer.parseInt(drinks_per);
+        //var p = Integer.parseInt(people);
+        //var total_drinks = p * d;
         var total_drinks = people * drinks_per;
         var total_mls = total_drinks * 45;
         var total_fifths = (total_mls/750);
