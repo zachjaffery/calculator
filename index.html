@@ -75,24 +75,13 @@
         const output = document.getElementById("output");
         const drinks_per = document.getElementById("drinks_per");
         const people = document.getElementById("people");
-
     
         var total_drinks = people * drinks_per;
         var total_mls = total_drinks * 45;
-        if ((total_mls % 750) = 0) {
-          var total_fifths = (total_mls/750)
-        }
-        else {
-          var total_fifths = (total_mls/750) + (total_mls % 750)
-        }
-        if ((total_mls % 1750) = 0) {
-          var total_handles = (total_mls/1750)
-        }
-        else {
-          var total_handles = (total_mls/1750) + (total_mls % 1750)
-        }
-        
-        output.innerHTML = "You will require " + <b>total_fifths</b> + " <b>fifths</b> of 40% liquor or " + <b>total_handles</b> + " <b>handles</b> of 40% liquor.";
+        var total_fifths = (total_mls/750);
+        var total_handles = (total_mls/1750);
+      
+        output.innerHTML = "You will require " + total_fifths + " fifths of 40% liquor or " + total_handles + " handles of 40% liquor.";
       }
     </script>
   </body>
