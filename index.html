@@ -31,6 +31,9 @@
              display: block;
              margin : 0 auto;
         }
+        label {
+          margin : 0 auto;
+        }
         h2 {
             text-align: center;
             font-family: 'Raleway', Helvetica, Arial, sans-serif;
@@ -52,12 +55,11 @@
     <h2>
       Please input the number of people attending and the desired drinks per person. Then, click the button to calculate.
     </h2>
-    
+    <label for="people">Number of People</label><br/>
     <input type="number" id="people" placeholder="Number of people" class="input-box"/>
-    <label for="people">Number of People</label>
-    <br />
+    <br /> 
+    <label for="drinks_per">Drinks per Person</label><br/>
     <input type="number" id="drinks_per" placeholder="Drinks per person" class="input-box"/>
-    <label for="drinks_per">Drinks per Person</label>
     <br />
     <button onclick="drinkCalc()" class="button-box">Calculate</button>
     <br />
@@ -81,10 +83,10 @@
         else {
           var total_fifths = (total_mls/750) + (total_mls % 750)
         if ((total_mls % 1750) = 0) {
-          var total_handless = (total_mls/1750)
+          var total_handles = (total_mls/1750)
         }
         else {
-          var total_handless = (total_mls/1750) + (total_mls % 1750)
+          var total_handles = (total_mls/1750) + (total_mls % 1750)
         
         output.innerHTML = "You will require " + total_fifths + " fifths of 40% liquor or " + total_handles + " handles of 40% liquor.";
       }
