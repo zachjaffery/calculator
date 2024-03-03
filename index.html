@@ -55,10 +55,10 @@
     <h2>
       Please input the number of people attending and the desired drinks per person. Then, click the button to calculate.
     </h2>
-    <label for="people">Number of People</label><br/>
+    <!--<label for="people">Number of People</label><br/>-->
     <input type="number" id="people" placeholder="Number of people" class="input-box"/>
     <br /> 
-    <label for="drinks_per">Drinks per Person</label><br/>
+    <!--<label for="drinks_per">Drinks per Person</label><br/>-->
     <input type="number" id="drinks_per" placeholder="Drinks per person" class="input-box"/>
     <br />
     <button onclick="drinkCalc()" class="button-box">Calculate</button>
@@ -82,13 +82,15 @@
         }
         else {
           var total_fifths = (total_mls/750) + (total_mls % 750)
+        }
         if ((total_mls % 1750) = 0) {
           var total_handles = (total_mls/1750)
         }
         else {
           var total_handles = (total_mls/1750) + (total_mls % 1750)
+        }
         
-        output.innerHTML = "You will require " + total_fifths + " fifths of 40% liquor or " + total_handles + " handles of 40% liquor.";
+        output.innerHTML = "You will require " + <b>total_fifths<b> + " <b>fifths<b> of 40% liquor or " + <b>total_handles<b> + " <b>handles<b> of 40% liquor.";
       }
     </script>
   </body>
