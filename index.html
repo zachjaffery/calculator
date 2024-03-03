@@ -73,8 +73,8 @@
     
         var total_drinks = people * drinks_per;
         var total_mls = total_drinks * 45;
-        var total_fifths = Math.ceil(total_mls/750);
-        var total_handles = Math.ceil(total_mls/1750);
+        var total_fifths = (total_mls/750) + ((total_mls % 750) != 0);
+        var total_handles = (total_mls/1750) + ((total_mls % 1750) != 0));
         output.innerHTML = "You will require " + total_fifths + " fifths of 40% liquor or " + total_handles + " handles of 40% liquor.";
       }
     </script>
