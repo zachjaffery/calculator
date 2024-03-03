@@ -22,7 +22,7 @@
         }
         h2 {
             font-family: 'Raleway', Helvetica, Arial, sans-serif;
-            font-size: 50px;
+            font-size: 35px;
             line-height: 70px;
         }
  
@@ -64,8 +64,8 @@
         var total_mls = total_drinks * 45;
         var total_fifths = Math.ceil(total_mls/750);
         var total_handles = Math.ceil(total_mls/1750);
-
-        output.innerHTML = "You will require " + text[total_fifths] + " fifths of 40% liquor or " + text[total_handles] + " handles of 40% liquor.";
+        var outString = "You will require " + text[total_fifths] + " fifths of 40% liquor or " + text[total_handles] + " handles of 40% liquor.";
+        output.innerHTML = text[outString];
       }
     </script>
   </body>
