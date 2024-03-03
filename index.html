@@ -2,8 +2,9 @@
 <html>
   
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+
     <style>
         div.wrapper {
             width: 300px;
@@ -19,13 +20,16 @@
              display: block;
              margin : 0 auto;
         }
-        h1, h2, h3, h4, h5, h6 {
-            text-align: center;
-            font-family: 'Corben', Georgia, Times, serif;
+        h2 {
+            font-family: 'Raleway', Helvetica, Arial, sans-serif;
+            font-size: 50px;
+            line-height: 70px;
         }
-        p, div {
-            text-align: center;
-            font-family: 'Nobile', Helvetica, Arial, sans-serif;
+ 
+        p {
+            font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+            font-size: 15px;
+            line-height: 25px;
         }
 
     </style>
@@ -39,6 +43,7 @@
     </h2>
     
     <input type="number" id="people" placeholder="Number of people" />
+    <br />
     <input type="number" id="drinks_per" placeholder="Drinks per person" />
     
     <button onclick="drinkCalc()">Calculate</button>
@@ -60,7 +65,7 @@
         var total_fifths = Math.ceil(total_mls/750);
         var total_handles = Math.ceil(total_mls/1750);
 
-        output.innerHTML = ("You will require " + text[total_fifths] + " fifths of 40% liquor or " + text[total_handles] + " handles of 40% liquor.");
+        output.innerHTML = "You will require " + text[total_fifths] + " fifths of 40% liquor or " + text[total_handles] + " handles of 40% liquor.";
       }
     </script>
   </body>
