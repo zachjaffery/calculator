@@ -48,13 +48,6 @@
             font-size: 15px; 
         }
 
-        parText {
-            font-size: 25px;
-        }
-        parNum {
-            font-size: 45px;
-            font-weight: bold;
-        }
     </style>
 </head>
 
@@ -106,9 +99,14 @@
         var total_fifths = ((total_mls / 750) + ((total_mls % 750) != 0));
         var total_handles = ((total_mls / 1750) + ((total_mls % 1750) != 0));
 
+        o2.style.fontWeight = 900
+        o4.style.fontWeight = 900
+        o2.style.fontSize = 75
+        o4.style.fontSize = 75
+
         o1.innerHTML = "You will require";
         o2.innerHTML = total_fifths;
-        o3.innerHTML = "fifths of 40% hard liquor";
+        o3.innerHTML = "fifths of 40% hard liquor or ";
         o4.innerHTML = total_handles;
         o5.innerHTML = "handles of 40% liquor.";
       }
