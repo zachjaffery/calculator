@@ -90,7 +90,11 @@
 
     <script>
       function drinkCalc() {
-        const output = document.getElementById("output");
+        const o1 = document.getElementById("o1");
+        const o2 = document.getElementById("o2");
+        const o3 = document.getElementById("o3");
+        const o4 = document.getElementById("o4");
+        const o5 = document.getElementById("o5");
         const drinks_per = document.getElementById("drinks_per").valueAsNumber;
         const people = document.getElementById("people").valueAsNumber;
     
@@ -99,11 +103,9 @@
         //var total_drinks = p * d;
         var total_drinks = people * drinks_per;
         var total_mls = total_drinks * 45;
-        var total_fifths = ((total_mls / 750) + ((totals_mls % 750) != 0));
-        var total_handles = ((total_mls / 1750) + ((totals_mls % 1750) != 0));
+        var total_fifths = ((total_mls / 750) + ((total_mls % 750) != 0));
+        var total_handles = ((total_mls / 1750) + ((total_mls % 1750) != 0));
 
-        o2.style.fontWeight = 'bold';
-        o4.style.fontWeight = 'bold';
         o1.innerHTML = "You will require";
         o2.innerHTML = total_fifths;
         o3.innerHTML = "fifths of 40% hard liquor";
