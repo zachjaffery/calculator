@@ -159,14 +159,14 @@
         var strF = "($"+priceFifthTotal+")"
         var priceHandleTotal = priceHandle*total_handles;
         var strH = "($"+priceHandleTotal+")"
-        if (isNaN(priceFifth)) {
+        if (isNaN(priceFifth) || document.getElementById("price").checked == false) {
           o6.innerHTML = "";
         }
         else {
           o6.innerHTML = strF;
         }
 
-        if (isNaN(priceHandle)) {
+        if (isNaN(priceHandle) || document.getElementById("price").checked == false) {
           o7.innerHTML = ""
         }
         else {
