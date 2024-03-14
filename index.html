@@ -29,15 +29,31 @@
              margin : 0 auto;
              font-family: 'Raleway', Helvetica, Arial, sans-serif;
         }
+        input[type="checkbox"] {
+             display: block;
+             margin : 0 auto;
+             font-family: 'Raleway', Helvetica, Arial, sans-serif;
+             text-align: center;
+             font-family: 'Raleway', Helvetica, Arial, sans-serif;
+        }
         button {
              display: block;
              margin : 0 auto;
              font-family: 'Raleway', Helvetica, Arial, sans-serif;
         }
         label {
-          margin : 0 auto;
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          font-family: 'Raleway', Helvetica, Arial, sans-serif;
         }
         h2 {
+            text-align: center;
+            font-family: 'Raleway', Helvetica, Arial, sans-serif;
+            font-size: 35px;
+            margin: 0;
+        }
+        h3 {
             text-align: center;
             font-family: 'Raleway', Helvetica, Arial, sans-serif;
             font-size: 35px;
@@ -55,15 +71,27 @@
   
   
   <body>
-    <h2>
+    <h3>
       Please input the number of people attending and the desired drinks per person. Then, click the button to calculate.
-    </h2>
+    </h3>
     <!--<label for="people">Number of People</label><br/>-->
     <input type="number" id="people" placeholder="Number of people" class="input-box"/>
     <br /> 
     <!--<label for="drinks_per">Drinks per Person</label><br/>-->
     <input type="number" id="drinks_per" placeholder="Drinks per person" class="input-box"/>
     <br />
+
+    <label for="price">Check to input prices</label>
+    <input type="checkbox" id="price" name="Calculate prices" checked="checked" onclick="togglePrices()">
+    
+    <br />
+    <div id="prices">
+      <input type="number" id="priceFifth" placeholder="Price per fifth" class="input-box"/>
+      <input type="number" id="priceHandle" placeholder="Price per handle" class="input-box"/>
+    </div>
+    
+    <br />
+
     <button onclick="drinkCalc()" class="button-box">Calculate</button>
     <br />
     <p id="o1" class="parText">
@@ -71,16 +99,33 @@
     </p> <br />
     <h2 id="o2" class="parNum">
 
-    </h2> <br />
+    </h2>
+    <p id="o6" class="addNum">
+
+    </p> <br/>
     <p id="o3" class="parText">
 
     </p> <br />
     <h2 id="o4" class="parNum">
 
-    </h2> <br />
+    </h2>
+    <p id="o7" class="addNum">
+
+    </p> <br/>
     <p id="o5" class="parText">
 
     </p> <br />
+
+    <script>
+    function togglePrices() {
+      var x = document.getElementById("prices");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
 
     <script>
       function drinkCalc() {
@@ -89,9 +134,12 @@
         const o3 = document.getElementById("o3");
         const o4 = document.getElementById("o4");
         const o5 = document.getElementById("o5");
+        const o6 = document.getElementById("o6");
+        const o7 = document.getElementById("o7");
         const drinks_per = document.getElementById("drinks_per").valueAsNumber;
         const people = document.getElementById("people").valueAsNumber;
-    
+        const priceFifth = document.getElementById("priceFifth").valueAsNumber;
+        const priceHandle = document.getElementById("priceHandle").valueAsNumber;
     
         var total_drinks = people * drinks_per;
         var total_mls = total_drinks * 45;
@@ -103,20 +151,44 @@
         var subtotal_handles = ((total_mls / 1750));
         
         var total_handles = math.ceil(subtotal_handles);
+        
+        
+        
 
+        var priceFifthTotal = priceFifth*total_fifths;
+        var strF = "($"+priceFifthTotal+")"
+        var priceHandleTotal = priceHandle*total_handles;
+        var strH = "($"+priceHandleTotal+")"
+        if (isNaN(priceFifth)) {
+          o6.innerHTML = "";
+        }
+        else {
+          o6.innerHTML = strF;
+        }
 
-
+        if (isNaN(priceHandle)) {
+          o7.innerHTML = ""
+        }
+        else {
+          o7.innerHTML = strH;
+        }
+        
+        
 
         o2.style.fontWeight = 900;
         o4.style.fontWeight = 900;
         o2.style.fontSize = 75;
         o4.style.fontSize = 75;
+        o6.style.fontSize = 15;
+        o7.style.fontSize = 15;
 
         o1.innerHTML = "You will require";
         o2.innerHTML = total_fifths;
         o3.innerHTML = "fifths of 40% hard liquor or ";
         o4.innerHTML = total_handles;
         o5.innerHTML = "handles of 40% liquor.";
+
+        
       }
     </script>
   </body>
