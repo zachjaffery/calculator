@@ -64,6 +64,9 @@
             font-family: 'Raleway', Helvetica, Arial, sans-serif;
             font-size: 15px; 
         }
+        .bgimg {
+          background-image: url(image/logo.png)
+        }
 
     </style>
 </head>
@@ -71,6 +74,7 @@
   
   
   <body>
+    <div class="bgimg">
     <h3>
       Please input the number of people attending and the desired drinks per person. Then, click the button to calculate.
     </h3>
@@ -116,7 +120,7 @@
     <p id="o5" class="parText">
 
     </p> <br />
-
+    </div>
     <script>
     function togglePrices() {
       var x = document.getElementById("prices");
