@@ -150,56 +150,56 @@
         const priceHandle = document.getElementById("priceHandle").valueAsNumber;
 
         if (isNaN(drinks_per) || isNAN(people)) {
-          o6.innerHTML = "Oops! One of the boxes has not been filled out.";
+          o2.innerHTML = "Oops! One of the boxes has not been filled out.";
         }
         else {
     
-        var total_drinks = people * drinks_per;
-        var total_mls = total_drinks * 45;
-
-        var subtotal_fifths = ((total_mls / 750));
-        var total_fifths = math.ceil(subtotal_fifths);
-
-
-        var subtotal_handles = ((total_mls / 1750));
-        
-        var total_handles = math.ceil(subtotal_handles);
-        
-        
-        
-
-        var priceFifthTotal = priceFifth*total_fifths;
-        var strF = "($"+priceFifthTotal+")"
-        var priceHandleTotal = priceHandle*total_handles;
-        var strH = "($"+priceHandleTotal+")"
-        if (isNaN(priceFifth) || document.getElementById("price").checked == false) {
-          o6.innerHTML = "";
-        }
-        else {
-          o6.innerHTML = strF;
-        }
-
-        if (isNaN(priceHandle) || document.getElementById("price").checked == false) {
-          o7.innerHTML = ""
-        }
-        else {
-          o7.innerHTML = strH;
-        }
-        
-        
-
-        o2.style.fontWeight = 900;
-        o4.style.fontWeight = 900;
-        o2.style.fontSize = 75;
-        o4.style.fontSize = 75;
-        o6.style.fontSize = 15;
-        o7.style.fontSize = 15;
-
-        o1.innerHTML = "You will require";
-        o2.innerHTML = total_fifths;
-        o3.innerHTML = "fifths of 40% hard liquor or ";
-        o4.innerHTML = total_handles;
-        o5.innerHTML = "handles of 40% liquor.";
+          var total_drinks = people * drinks_per;
+          var total_mls = total_drinks * 45;
+  
+          var subtotal_fifths = ((total_mls / 750));
+          var total_fifths = math.ceil(subtotal_fifths);
+  
+  
+          var subtotal_handles = ((total_mls / 1750));
+          
+          var total_handles = math.ceil(subtotal_handles);
+          
+          
+          
+  
+          var priceFifthTotal = priceFifth*total_fifths;
+          var strF = "($"+priceFifthTotal+")"
+          var priceHandleTotal = priceHandle*total_handles;
+          var strH = "($"+priceHandleTotal+")"
+          if (isNaN(priceFifth) || document.getElementById("price").checked == false) {
+            o6.innerHTML = "";
+          }
+          else {
+            o6.innerHTML = strF;
+          }
+  
+          if (isNaN(priceHandle) || document.getElementById("price").checked == false) {
+            o7.innerHTML = ""
+          }
+          else {
+            o7.innerHTML = strH;
+          }
+          
+          
+  
+          o2.style.fontWeight = 900;
+          o4.style.fontWeight = 900;
+          o2.style.fontSize = 75;
+          o4.style.fontSize = 75;
+          o6.style.fontSize = 15;
+          o7.style.fontSize = 15;
+  
+          o1.innerHTML = "You will require";
+          o2.innerHTML = total_fifths;
+          o3.innerHTML = "fifths of 40% hard liquor or ";
+          o4.innerHTML = total_handles;
+          o5.innerHTML = "handles of 40% liquor.";
         }
 
         
