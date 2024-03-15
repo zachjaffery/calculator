@@ -149,7 +149,7 @@
         const priceFifth = document.getElementById("priceFifth").valueAsNumber;
         const priceHandle = document.getElementById("priceHandle").valueAsNumber;
 
-        if (isNaN(drinks_per) || isNAN(people)) {
+        if (isNaN(drinks_per) || isNaN(people)) {
           o2.innerHTML = "Oops! One of the boxes has not been filled out.";
         }
         else {
@@ -169,9 +169,9 @@
           
   
           var priceFifthTotal = priceFifth*total_fifths;
-          var strF = "($"+priceFifthTotal+")"
+          var strF = "($"+priceFifthTotal+")";
           var priceHandleTotal = priceHandle*total_handles;
-          var strH = "($"+priceHandleTotal+")"
+          var strH = "($"+priceHandleTotal+")";
           if (isNaN(priceFifth) || document.getElementById("price").checked == false) {
             o6.innerHTML = "";
           }
@@ -180,7 +180,7 @@
           }
   
           if (isNaN(priceHandle) || document.getElementById("price").checked == false) {
-            o7.innerHTML = ""
+            o7.innerHTML = "";
           }
           else {
             o7.innerHTML = strH;
