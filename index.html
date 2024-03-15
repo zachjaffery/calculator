@@ -148,6 +148,11 @@
         const people = document.getElementById("people").valueAsNumber;
         const priceFifth = document.getElementById("priceFifth").valueAsNumber;
         const priceHandle = document.getElementById("priceHandle").valueAsNumber;
+
+        if (isNaN(drinks_per) || isNAN(people)) {
+          o6.innerHTML = "Oops! One of the boxes has not been filled out.";
+        }
+        else {
     
         var total_drinks = people * drinks_per;
         var total_mls = total_drinks * 45;
@@ -195,6 +200,7 @@
         o3.innerHTML = "fifths of 40% hard liquor or ";
         o4.innerHTML = total_handles;
         o5.innerHTML = "handles of 40% liquor.";
+        }
 
         
       }
